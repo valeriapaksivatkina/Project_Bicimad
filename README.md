@@ -23,16 +23,19 @@ API de GoogleMaps (multiplataforma) para construir el enlace de la ruta para el 
 
 ***Pasos del trabajo***
 Obtener los datos de las APIs, estudiarlos y limpiarlos – un df con datos de las estaciones de Bicimad y un df con los datos de los centros culturales de Madrid
+
 Separar los datos de coordinadas de las estaciones y de los centros culturales a dos columnas distintas (con lambda funciones)
 Calcular para cada centro cultural 2 estaciones mas cercanas y a cuantas metros esta la primera. Crear columnas nuevas con esos datos en df de centros culturales
-4) En el df de las estaciones crear nuevas columnas que contienen datos de la accesibilidad de bicis (si/no) y la posibilidad de aparcar bici (si/no)
+
+En el df de las estaciones crear nuevas columnas que contienen datos de la accesibilidad de bicis (si/no) y la posibilidad de aparcar bici (si/no)
   se puede alquilar bici: if activate == 1 and dock_bikes - reservations_count > 0
   se puede aparcar bici: if activate == 1 and free_bases > 0 
 
-5)Para cada centro cultural (en df de centros culturales) buscar el valor apropriado en esas columnas y crear columnas nuevas 
+Para cada centro cultural (en df de centros culturales) buscar el valor apropriado en esas columnas y crear columnas nuevas 
 
-6) Concatenar dos dataframes (de las estaciones de Bicimad y de los centros culturales). Para eso hacer la misma estructura  en cada dataframe 
-  El df_final contiene columnas 
+Concatenar dos dataframes (de las estaciones de Bicimad y de los centros culturales). Para eso hacer la misma estructura  en cada dataframe 
+
+El df_final contiene columnas 
 ‘origen_o_destino’
 ‘direccion’, 
 ‘latitude’, 
@@ -45,7 +48,8 @@ Calcular para cada centro cultural 2 estaciones mas cercanas y a cuantas metros 
 ’se_puede_alquilar_bici_2’, 
 ‘se_puede_dejar_bici_2’
 
-7)Escribir el bucle para que el usuario haga input y salga el ouput (datos filtrados del df)
+
+Escribir el bucle para que el usuario haga input y salga el ouput (datos filtrados del df)
 En ese paso hemos usado la biblioteca de FuzzyWuzzy que permite introducir la palabra clave, no el nombre completo del origen y/o destino 
 
 Tambien incluye la llamada a la API del GoogleMaps # Construir la URL de la ruta en bicicleta en Google Maps y abre el enlace de la ruta en Google Maps en el navegador
